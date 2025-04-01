@@ -3,6 +3,8 @@
 Ever seen a social media post that is just so completely devoid of thought that
 you have no choice but to mock it? This tool can help you!
 
+View live at https://mockinator.lol
+
 ## Setup
 
 To set up on local, clone this repo and run `nvm use` to ensure your local Node
