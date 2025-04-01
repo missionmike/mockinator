@@ -1,0 +1,60 @@
+name: Deploy
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+env:
+  GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+  VITE_GTM_ID: ${{ vars.VITE_GTM_ID }}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ./.github/actions/setup-dependencies
+
+      - name: Check Lint
+        run: npm run lint
+
+      - name: Check Prettier
+        run: npm run prettier
+
+  build:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ./.github/actions/setup-dependencies
+
+      - name: Build static files
+        id: build
+        run: npm run build
+
+      - name: Upload static files as artifact
+        id: deployment
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/
+
+  deploy:
+    environment:
+      name: github-pages
+      url:
+        https://${{ github.repository_owner }}.github.io/${{
+        github.event.repository.name }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

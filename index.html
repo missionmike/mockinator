@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/assets/site.webmanifest" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mockinator | mOCk thE sTuPId poSTs on SoCIaL MeDIa</title>
+
+    <meta
+      name="description"
+      content="Want to mock someone? Enter some text and let the Mockinator mock it. This is especially useful to mock people on social media, when their post is already so stupid there is literally nothing else to do with it."
+    />
+    <meta
+      name="keywords"
+      content="social, spongebob, meme, mock, mockinator, text, generator, ai, em dashes"
+    />
+    <meta name="author" content="Michael R. Dinerstein | Mission Mike" />
+    <meta name="robots" content="index, follow" />
+
+    <meta
+      property="og:title"
+      content="Mockinator | mOCk thE sTuPId poSTs on SoCIaL MeDIa"
+    />
+    <meta
+      property="og:description"
+      content="Want to mock someone? Enter some text and let the Mockinator mock it. This is especially useful to mock people on social media, when their post is already so stupid there is literally nothing else to do with it."
+    />
+    <meta property="og:image" content="/assets/og-image.png" />
+    <meta property="og:url" content="https://www.mockinator.net" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Mockinator" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "{{ gtmId }}");
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id={{ gtmId }}"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+  </body>
+</html>
