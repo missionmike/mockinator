@@ -6,11 +6,13 @@ body {
   width: 100%;
   height: 100%;
   overflow: auto;
+  place-items: unset;
 }
 
 .app {
   position: relative;
   width: 100vw;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   margin-top: 0;
@@ -22,28 +24,24 @@ body {
   width: 1024px;
   max-width: 90%;
   height: 100%;
-  margin: 0 auto;
+  margin: 0 auto 4rem auto;
 
   h1 {
     display: block;
-    margin-top: 1rem;
+    margin-top: 2rem;
+  }
+
+  .options-label {
+    text-align: center;
   }
 }
 
 .options {
   display: flex;
-  flex-direction: column;
-
-  p {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-  }
-
-  label {
-    margin-right: 1rem;
-    font-weight: bold;
-  }
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem 0;
 }
 
 h1,
@@ -65,7 +63,7 @@ footer {
   text-align: center;
   padding: 10px;
   z-index: 1;
-  margin-top: 2rem;
+  margin-top: auto;
   border-top: 1px solid white;
 }
 

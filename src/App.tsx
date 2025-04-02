@@ -2,6 +2,7 @@ import "./App.scss";
 
 import React, { useEffect, useState } from "react";
 
+import { ImageButton } from "./components/ImageButton";
 import { Textarea } from "./components/Textarea";
 
 function App() {
@@ -83,21 +84,43 @@ function App() {
         <p>
           Want to mock someone? Enter some text and let the Mockinator mock it.
           This is especially useful to mock people on social media, when their
-          post is already so stupid there is literally nothing else to do with
+          post is already so devoid of thought there is nothing else to do with
           it.
         </p>
         <p>
-          Simply copy/paste their post into the input, then click the output to
+          Simply copy/paste post text into the input, then click the output to
           copy back to clipboard for some high-class mocking.
         </p>
 
-        <h2>Input 🧠</h2>
         <Textarea
           placeholder="Enter text here..."
           value={inputText}
           onChange={handleInputChange}
         />
-        <h2>Output 🚀</h2>
+        <p className="options-label">
+          <strong>Options (tap/click to toggle):</strong>
+        </p>
+        <div className="options">
+          <ImageButton
+            src="assets/images/mocking-spongebob.jpeg"
+            alt="Mocking Spongebob"
+            onClick={() => setSpongeBobMode(!spongeBobMode)}
+            selected={spongeBobMode}
+          />
+          <ImageButton
+            src="assets/images/rocket-emoji.png"
+            alt="Emoji Mode"
+            onClick={() => setEmojiMode(!emojiMode)}
+            selected={emojiMode}
+          />
+          <ImageButton
+            src="assets/images/ai-robot.jpg"
+            alt="AI Mode"
+            onClick={() => setRandomAiMode(!randomAiMode)}
+            selected={randomAiMode}
+          />
+        </div>
+
         <Textarea
           placeholder="Mockinator output..."
           readOnly
@@ -107,51 +130,10 @@ function App() {
             alert("Copied to clipboard!");
           }}
         />
-        <div className="options">
-          <p>
-            <span>
-              <input
-                type="checkbox"
-                checked={spongeBobMode}
-                onChange={() => setSpongeBobMode(!spongeBobMode)}
-                style={{ marginRight: "10px", width: "20px", height: "20px" }}
-                id="spongeBobModeToggle"
-              />
-              <label htmlFor="spongeBobModeToggle">SpongeBob Mode</label>
-            </span>{" "}
-            - wHeN yOU waNT tHiS aNNOyINg eFFecT
-          </p>
-          <p>
-            <span>
-              <input
-                type="checkbox"
-                checked={emojiMode}
-                onChange={() => setEmojiMode(!emojiMode)}
-                style={{ marginRight: "10px", width: "20px", height: "20px" }}
-                id="emojiModeToggle"
-              />
-              <label htmlFor="emojiModeToggle">Emoji Mode</label>
-            </span>{" "}
-            - Add random emojis 🚀
-          </p>
-          <p>
-            <span>
-              <input
-                type="checkbox"
-                checked={randomAiMode}
-                onChange={() => setRandomAiMode(!randomAiMode)}
-                style={{ marginRight: "10px", width: "20px", height: "20px" }}
-                id="randomAiModeToggle"
-              />
-              <label htmlFor="randomAiModeToggle">AI Mode</label>
-            </span>{" "}
-            - Ensure there&apos;s &mdash; em-dashes &mdash;
-          </p>
-        </div>
       </div>
       <footer>
         <p>
-          made with 🤖 by{" "}
+          made with 🤣 by{" "}
           <a
             href="https://github.com/missionmike/mockinator"
             target="_blank"
