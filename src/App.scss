@@ -30,6 +30,10 @@ body {
     display: block;
     margin-top: 2rem;
     text-align: center;
+
+    @media (max-width: 600px) {
+      font-size: 1.7rem;
+    }
   }
 
   .options-label {
