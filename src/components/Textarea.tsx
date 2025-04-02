@@ -1,3 +1,5 @@
+import "./Textarea.scss";
+
 export const Textarea = ({
   value,
   onChange = () => {},
@@ -13,13 +15,7 @@ export const Textarea = ({
 }) => (
   <textarea
     placeholder={placeholder}
-    style={{
-      width: "100%",
-      height: "200px",
-      padding: "1rem",
-      borderRadius: "15px",
-      marginBottom: "20px",
-    }}
+    className="textarea"
     value={value}
     onChange={onChange}
     onClick={onClick}

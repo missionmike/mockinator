@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 
 import React, { useEffect, useState } from "react";
 
@@ -99,7 +99,7 @@ function App() {
         />
         <h2>Output 🚀</h2>
         <Textarea
-          placeholder="AI-inator output..."
+          placeholder="Mockinator output..."
           readOnly
           value={outputText}
           onClick={() => {
@@ -107,40 +107,47 @@ function App() {
             alert("Copied to clipboard!");
           }}
         />
-
-        <p style={{ display: "flex", alignItems: "center" }}>
-          <input
-            type="checkbox"
-            checked={spongeBobMode}
-            onChange={() => setSpongeBobMode(!spongeBobMode)}
-            style={{ marginRight: "10px", width: "20px", height: "20px" }}
-            id="spongeBobModeToggle"
-          />
-          <label htmlFor="spongeBobModeToggle">SpongeBob Mode</label> - wHeN yOU
-          waNT tHiS aNNOyINg eFFecT
-        </p>
-        <p style={{ display: "flex", alignItems: "center" }}>
-          <input
-            type="checkbox"
-            checked={emojiMode}
-            onChange={() => setEmojiMode(!emojiMode)}
-            style={{ marginRight: "10px", width: "20px", height: "20px" }}
-            id="emojiModeToggle"
-          />
-          <label htmlFor="emojiModeToggle">Emoji Mode</label> - Add random
-          emojis 🚀
-        </p>
-        <p style={{ display: "flex", alignItems: "center" }}>
-          <input
-            type="checkbox"
-            checked={randomAiMode}
-            onChange={() => setRandomAiMode(!randomAiMode)}
-            style={{ marginRight: "10px", width: "20px", height: "20px" }}
-            id="randomAiModeToggle"
-          />
-          <label htmlFor="randomAiModeToggle">AI Mode</label> - Ensure
-          there&apos;s &mdash; em-dashes &mdash;
-        </p>
+        <div className="options">
+          <p>
+            <span>
+              <input
+                type="checkbox"
+                checked={spongeBobMode}
+                onChange={() => setSpongeBobMode(!spongeBobMode)}
+                style={{ marginRight: "10px", width: "20px", height: "20px" }}
+                id="spongeBobModeToggle"
+              />
+              <label htmlFor="spongeBobModeToggle">SpongeBob Mode</label>
+            </span>{" "}
+            - wHeN yOU waNT tHiS aNNOyINg eFFecT
+          </p>
+          <p>
+            <span>
+              <input
+                type="checkbox"
+                checked={emojiMode}
+                onChange={() => setEmojiMode(!emojiMode)}
+                style={{ marginRight: "10px", width: "20px", height: "20px" }}
+                id="emojiModeToggle"
+              />
+              <label htmlFor="emojiModeToggle">Emoji Mode</label>
+            </span>{" "}
+            - Add random emojis 🚀
+          </p>
+          <p>
+            <span>
+              <input
+                type="checkbox"
+                checked={randomAiMode}
+                onChange={() => setRandomAiMode(!randomAiMode)}
+                style={{ marginRight: "10px", width: "20px", height: "20px" }}
+                id="randomAiModeToggle"
+              />
+              <label htmlFor="randomAiModeToggle">AI Mode</label>
+            </span>{" "}
+            - Ensure there&apos;s &mdash; em-dashes &mdash;
+          </p>
+        </div>
       </div>
       <footer>
         <p>
