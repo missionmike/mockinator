@@ -80,16 +80,15 @@ function App() {
   return (
     <div className="app">
       <div className="container">
-        <h1>Mockinator</h1>
+        <h1>🚀 MoCKiNAtOr 🚀</h1>
         <p>
-          Want to mock someone? Enter some text and let the Mockinator mock it.
-          This is especially useful to mock people on social media, when their
-          post is already so devoid of thought there is nothing else to do with
-          it.
-        </p>
-        <p>
-          Simply copy/paste post text into the input, then click the output to
-          copy back to clipboard for some high-class mocking.
+          Enter some text and let the Mockinator mock it. This is especially
+          useful to mock people on social media, when their post is already so
+          devoid of thought there is nothing else to do with it.{" "}
+          <strong>
+            Simply copy/paste post text into the input, then click the output to
+            copy back to clipboard for some high-class mocking.
+          </strong>
         </p>
 
         <Textarea
@@ -102,19 +101,19 @@ function App() {
         </p>
         <div className="options">
           <ImageButton
-            src="public/images/mocking-spongebob.jpeg"
+            src="images/mocking-spongebob.jpeg"
             alt="Mocking Spongebob"
             onClick={() => setSpongeBobMode(!spongeBobMode)}
             selected={spongeBobMode}
           />
           <ImageButton
-            src="public/images/rocket-emoji.png"
+            src="images/rocket-emoji.png"
             alt="Emoji Mode"
             onClick={() => setEmojiMode(!emojiMode)}
             selected={emojiMode}
           />
           <ImageButton
-            src="public/images/ai-robot.jpg"
+            src="images/ai-robot.jpg"
             alt="AI Mode"
             onClick={() => setRandomAiMode(!randomAiMode)}
             selected={randomAiMode}

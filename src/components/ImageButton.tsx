@@ -18,7 +18,6 @@ export const ImageButton: React.FC<ImageButtonProps> = ({
   return (
     <div className="image-button">
       <div className="image-button-overlay" data-selected={selected} />
-      <div className="image-button-text">{selected ? "✔️" : ""}</div>
       <img
         src={src}
         alt={alt}
