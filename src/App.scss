@@ -35,6 +35,30 @@ body {
   .options-label {
     text-align: center;
   }
+
+  .copy-textarea {
+    position: relative;
+
+    .copied-text {
+      position: absolute;
+      top: 0;
+      right: 1rem;
+      z-index: 1;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 1rem;
+      border-radius: 10px;
+      animation: fadeOut 1s ease-in 1s forwards;
+
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+    }
+  }
 }
 
 .options {

@@ -13,6 +13,8 @@ function App() {
   const [emojiMode, setEmojiMode] = useState(true);
   const [randomAiMode, setRandomAiMode] = useState(true);
 
+  const [textCopied, setTextCopied] = useState(false);
+
   const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInputText(event.target.value);
   };
@@ -82,12 +84,14 @@ function App() {
       <div className="container">
         <h1>🚀 MoCKiNAtOr 🚀</h1>
         <p>
-          Enter some text and let the Mockinator mock it. This is especially
-          useful to mock people on social media, when their post is already so
-          devoid of thought there is nothing else to do with it.{" "}
+          Enter some text and let the Mockinator mock it. Useful to mock people
+          on social when their post is already so devoid of thought there is no
+          reasoning with them.
+        </p>
+        <p>
           <strong>
-            Simply copy/paste post text into the input, then click the output to
-            copy back to clipboard for some high-class mocking.
+            Copy/paste to the input and click the output to copy back for some
+            high-class mocking.
           </strong>
         </p>
 
@@ -120,15 +124,23 @@ function App() {
           />
         </div>
 
-        <Textarea
-          placeholder="Mockinator output..."
-          readOnly
-          value={outputText}
-          onClick={() => {
-            navigator.clipboard.writeText(outputText);
-            alert("Copied to clipboard!");
-          }}
-        />
+        <div className="copy-textarea">
+          {textCopied && <p className="copied-text">📋 Copied!</p>}
+          <Textarea
+            placeholder="Mockinator output..."
+            readOnly
+            value={outputText}
+            onClick={() => {
+              if (outputText.trim().length === 0) return;
+
+              navigator.clipboard.writeText(outputText);
+              setTextCopied(true);
+              setTimeout(() => {
+                setTextCopied(false);
+              }, 2000);
+            }}
+          />
+        </div>
       </div>
       <footer>
         <p>
