@@ -16,4 +16,4 @@ Follow the instructions in the terminal to view on local.
 
 ## Contributions
 
-Contributions are welcome! Feel free to fork this repo and open a pull request.
+Contributions are welcome! Feel free to fork this repo and open a Pull Request.
