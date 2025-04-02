@@ -102,19 +102,19 @@ function App() {
         </p>
         <div className="options">
           <ImageButton
-            src="assets/images/mocking-spongebob.jpeg"
+            src="public/images/mocking-spongebob.jpeg"
             alt="Mocking Spongebob"
             onClick={() => setSpongeBobMode(!spongeBobMode)}
             selected={spongeBobMode}
           />
           <ImageButton
-            src="assets/images/rocket-emoji.png"
+            src="public/images/rocket-emoji.png"
             alt="Emoji Mode"
             onClick={() => setEmojiMode(!emojiMode)}
             selected={emojiMode}
           />
           <ImageButton
-            src="assets/images/ai-robot.jpg"
+            src="public/images/ai-robot.jpg"
             alt="AI Mode"
             onClick={() => setRandomAiMode(!randomAiMode)}
             selected={randomAiMode}
